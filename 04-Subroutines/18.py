@@ -3,7 +3,7 @@ def writeCon(n):
     for i in range (1,n+1):
         string += str(i)
         string += ' '
-    return string[0:(len(string)-1)]
+    return string.strip()
 
 
 print(writeCon(15))
