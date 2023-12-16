@@ -1,17 +1,13 @@
 from typing import Iterable
 
-
-def transpose(arr):
-    new_arr = []
-    for x in range(len(arr)):
-        if isinstance(arr[x],Iterable):
-            for y in range(len(arr[x])):
-                new_arr[y][x]=arr[x][y]
-        else:
-            new_arr[0][x] = arr[x]
-    return new_arr
-
-
-arr=[[5,6],[7,8]]
+def transpose(m):
+    if isinstance(m[0],Iterable):
+        return list(map(list, zip(*m)))
+    else:
+        return list(map(list, zip(m)))
+    
+arr=[[5,6,0],[7,8,1]]
+arr2=[5,6,7,8]
 print(transpose(arr))
+print(transpose(arr2))
     
